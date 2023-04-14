@@ -1,5 +1,7 @@
 #! usr/bin/env bash
+
 gh auth login -s delete_repo 
+
 read -p "Extend?" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
