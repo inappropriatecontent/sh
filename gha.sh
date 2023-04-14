@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -
+#! usr/bin/env bash
 read -p "Login?" -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
