@@ -12,4 +12,4 @@ mod() {
 
 cd ~
 sudo apt-get update
-mod 'FD-Find' 'fd'
+mod('FD-Find' 'fd')
