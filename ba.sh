@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
+cd ~
 sudo apt-get update
-sudo apt-get install -y fdfind
-sudo mv /usr/bin/fdfind /usr/bin/fd
-sudo apt-get upgrade -y
-read -p "Do you want to continue? (yes/no) " answer
-if [ "$answer" = "yes" ]; then
-  echo "OK, let's go on"
-elif [ "$answer" = "no" ]; then
-  echo "Bye"
-  exit
+read -p "Start with fdFind? No to quit." -n 1 -ei Y resp
+if ["$resp" = [Yy]*]; then
+	sudo apt-get install -y fdfind
+	sudo mv /usr/bin/fdfind /usr/bin/fd
+	sudo apt-get upgrade -y
+elif ["$resp" = "no"]; then
+	cd ~
+	exit
 else
-  echo "Invalid input"
+	sudo apt-get upgrade -y
 fi
