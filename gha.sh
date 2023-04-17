@@ -1,5 +1,4 @@
 #! usr/bin/env bash
-www-browser -u github.com/login/device
 gh auth login -s delete_repo 
 sudo apt-get install fzf jq -y
 gh extension install yusukebe/gh-markdown-preview
