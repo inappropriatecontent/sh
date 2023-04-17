@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
-cd ~
-sudo apt-get update
-read -p "Start with fdFind? No to quit." -n 1 -ei Y resp
+mod() {
+read -p "Get $($1)? No to quit." -n 1 -ei Y resp
 if ["$resp" = [Yy]*]; then
-	sudo apt-get install -y fdfind
-	sudo mv /usr/bin/fdfind /usr/bin/fd
-	sudo apt-get upgrade -y
+	bash "~/$($2).sh"
 elif ["$resp" = "no"]; then
-	cd ~
 	exit
 else
 	sudo apt-get upgrade -y
-fi
+fi	
+}
+
+cd ~
+sudo apt-get update
+mod 'FD-Find' 'fd'
+
