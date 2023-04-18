@@ -1,6 +1,4 @@
 #! usr/bin/env bash
-local platform = "linux"  # or "macos" / "linux-musl"
-wget https://github.com/sayanarijit/xplr/releases/latest/download/xplr-$platform.tar.gz
-tar xzvf xplr-$platform.tar.gz
+wget https://github.com/sayanarijit/xplr/releases/latest/download/xplr-linux.tar.gz
+tar xzvf xplr-linux.tar.gz
 sudo mv xplr /usr/local/bin/
-rm xplr-$platform.tar.gz
