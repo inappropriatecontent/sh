@@ -10,4 +10,8 @@ mod() {
 
 cd ~
 sudo apt-get update
-mod fd
+mod fd.sh
+mod gh.sh
+mod gha.sh
+mod nvm.sh
+mod xplr.sh
