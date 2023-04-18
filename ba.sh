@@ -4,8 +4,9 @@ cd sh
 mod() {
 	read -p "Install:" -ei "$1" reply
 	if ["$reply" = "$1"]; then
-	echo "chmod a+x $1.sh"
-	echo "$1.sh"
+	echo "chmod a+x $1.sh" /
+	&& echo "$1.sh"
+	elif
 }
 # sudo apt-get update
 mod fd
