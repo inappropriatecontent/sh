@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 cd sh
-chmod a+x fd.sh gh.sh gha.sh nvm.sh xplr.sh
+# chmod a+x fd.sh gh.sh gha.sh nvm.sh xplr.sh
 mod() {
-	local fn = $1,
-	st = "$1" | sed 's/.sh$//'
-	read -p "Install:" -ei "$st" reply
-	if ["$reply" = "$2"]; then
-	bash $fn
+	read -p "Install:" -ei "$1" reply
+	if ["$reply" = "$1"]; then
+	echo "chmod a+x $1.sh"
+	echo "$1.sh"
 }
 
 cd ~
