@@ -7,11 +7,10 @@ mod() {
 	echo "chmod a+x $1.sh"
 	echo "$1.sh"
 }
-
+# sudo apt-get update
+mod fd
+mod gh
+mod gha
+mod nvm
+mod xplr
 cd ~
-sudo apt-get update
-mod fd.sh
-mod gh.sh
-mod gha.sh
-mod nvm.sh
-mod xplr.sh
