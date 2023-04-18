@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-apt() {
-	sudo apt-get update -y >/dev/null
-	sudo apt-get upgrade -y >/dev/null
+apgt() {
+	sudo apt-get update -y
+	sudo apt-get upgrade -y
 	if [[$1 != '']]
 	sudo apt-get install -y $1
 	fi
@@ -15,7 +15,7 @@ mod() {
 	rm $2
 	if [[$3 != '']]
 	then
-	apt $3
+	apgt $3
 	fi
 	else
 		echo "$2 not installed"
