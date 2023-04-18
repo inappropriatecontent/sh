@@ -4,9 +4,9 @@ chmod a+x fd.sh gh.sh gha.sh nvm.sh xplr.sh
 mod() {
 	local fn = $1,
 	st= "$1" | sed 's/.sh$//'
-	read -p "Install?" -ei "$2" reply
+	read -p "Install:" -ei "$st" reply
 	if ["$reply" = "$2"]; then
-	echo "./$1"
+	bash $fn
 }
 
 cd ~
