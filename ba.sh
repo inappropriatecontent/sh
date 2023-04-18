@@ -3,7 +3,7 @@ cd sh
 chmod a+x fd.sh gh.sh gha.sh nvm.sh xplr.sh
 mod() {
 	local fn = $1,
-	st= "$1" | sed 's/.sh$//'
+	st = "$1" | sed 's/.sh$//'
 	read -p "Install:" -ei "$st" reply
 	if ["$reply" = "$2"]; then
 	bash $fn
