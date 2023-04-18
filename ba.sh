@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-cd ~./sh
 apt() {
 	sudo apt-get update -y >/dev/null
 	sudo apt-get upgrade -y >/dev/null
@@ -22,9 +21,10 @@ mod() {
 		echo "$2 not installed"
 	fi
 }
-mod fd fd.sh
+cd ~/sh
+mod find fd.sh
 mod gh gh.sh 'fzf jq'
 mod gh-auth gha.sh
-mod nvm nvm.sh
+mod node nvm.sh
 mod xplr xplr.sh
 cd ~
