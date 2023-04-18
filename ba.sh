@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
-cd sh
-# chmod a+x fd.sh gh.sh gha.sh nvm.sh xplr.sh
+cd ~./sh
 mod() {
-	read -p "Install:" -ei "$1" reply
-	if ["$reply" = "$1"]; then
-	echo "chmod a+x $1.sh" /
-	&& echo "$1.sh"
-	elif
+	read -n 1 -r -p "Install $1?"
+	if [[ $REPLY =~ ^[Yy]$ ]]
+	then
+		chmod a+x $2
+		bash $2 -s
+		rm $2
+	else 
+		echo "$2 not installed"
+	fi
 }
-# sudo apt-get update
-mod fd
-mod gh
-mod gha
-mod nvm
-mod xplr
+sudo apt-get update
+mod fd fd.sh
+mod gh gh.sh
+mod gh-auth gha.sh
+mod nvm nvm.sh
+mod xplr xplr.sh
 cd ~
