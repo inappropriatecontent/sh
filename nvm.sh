@@ -1,11 +1,6 @@
-#! usr/bin/env bash
-cd ~
-git clone https://github.com/nvm-sh/nvm .nvm
-cd ~/.nvm
-git checkout v0.39.3
-. ./install.sh
-export NVM_DIR = "$HOME/.nvm"
-[-s "$NVM_DIR/nvm.sh"] && \. "$NVM_DIR/nvm.sh"
-[-s "$NVM_DIR/bash_completion"] && \. "$NVM_DIR/bash_completion"
+#!/usr/bin/env bash
+cd "$HOME" || return
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm install 18
 npm add --global http-server hget
+cd sh || exit
