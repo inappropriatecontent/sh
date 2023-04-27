@@ -9,5 +9,5 @@ if [type -p xplr >/dev/null]
 then
 gh extension install sayanarijit/gh-xplr
 gh alias set x xplr
-alias ghx = 'read -r -p "Clone Search?" | gh xplr "$(gh s $1)"'
+alias ghx='read -r -p "Clone Search?" | gh xplr "$(gh s $1)"'
 fi
