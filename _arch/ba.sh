@@ -1,23 +1,35 @@
 #!/usr/bin/env bash
-
-{ # this ensures the entire script is downloaded #
-
-git config --global user.email "jmyle.koretz@gmail.com"
-git config --global user.name "a. perv"
-sudo apt-get update
-sudo apt-get upgrade -y
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash -
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-nvm install 18 --latest-npm
-
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-&& sudo apt update \
-&& sudo apt install gh -y
-
-} # this ensures the entire script is downloaded #
+apup() {
+	echo "Updating apt..."
+	sudo apt-get update -y >/dev/null
+	sudo apt-get upgrade -y >/dev/null
+	sudo apt autoremove -y >/dev/null
+	echo "Up to date."
+	echo #
+}
+apgt() {
+	sudo apt-get install -y $1 >/dev/null
+	echo "$1 added."
+	echo #
+}
+mod() {
+	read -n 1 -r -p "Do $1?"
+	if [[ $REPLY =~ ^[Yy]$ ]]; then
+		if [[ $3 != '' ]]; then
+			apgt $3
+		fi
+		chmod a+x $2
+		bash $2 -s
+		rm $2
+		echo "Done"
+	else
+		echo "$2 not done"!
+	fi
+	echo #
+}
+apup
+mod find fd.sh 'neovim'
+mod gh-cli gh.sh 'fzf'
+mod gh-auth gha.sh 'jq'
+mod node nvm.sh
+mod xplr xplr.sh
