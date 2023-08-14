@@ -9,4 +9,6 @@ sudo apt-get install gnome-keyring gh -y
 curl -JL --output code.deb https://go.microsoft.com/fwlink/?LinkID=760868
 sudo apt install ./code.deb -y
 rm code.deb
+nvm install --lts
+npm install --global @gouch/to-title-case
 gh auth login -s
