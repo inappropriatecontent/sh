@@ -13,4 +13,4 @@ nvm install --lts
 npm install --global @gouch/to-title-case
 sudo apt install ./code.deb -y
 rm code.deb
-gh auth login -s
+gh auth login -s delete_repo
